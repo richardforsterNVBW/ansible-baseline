@@ -56,6 +56,8 @@
   with_items:
     - tilemaker.service
     - tilemaker.timer
+    - tilemaker-cleanup.service
+    - tilemaker-cleanup.timer
 
 - name: Start tilemaker.timer
   systemd:
@@ -64,3 +66,10 @@
     enabled: yes
     daemon_reload: yes
 
+- name: Start tilemaker-cleanup.timer
+  systemd:
+    name: tilemaker-cleanup.timer
+    state: started
+    enabled: yes
+    daemon_reload: yes
+  when: tilemaker_cleanup 

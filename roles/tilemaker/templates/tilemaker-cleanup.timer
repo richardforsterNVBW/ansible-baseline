@@ -1,0 +1,9 @@
+[Unit]
+Description=Clean up pbf files on the first Saturday of the month
+
+[Timer]
+OnCalendar=Sat *-*-01..07 03:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

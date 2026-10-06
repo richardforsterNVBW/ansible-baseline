@@ -1,0 +1,8 @@
+[Unit]
+Description=Cleanup pbf files
+
+[Service]
+ExecStart=+/bin/bash -c 'rm -f {{ tilemaker_work_dir }}*.pbf'
+
+[Install]
+WantedBy=multi-user.target
